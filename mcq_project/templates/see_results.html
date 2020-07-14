@@ -1,0 +1,9 @@
+{%extends "student.html" %}
+{%block title%}
+Home
+{%endblock%}
+{%block content%}
+{%for object in quiz%}
+<h3>{{object.quiz}} By {{object.quiz.user}} scored {{object.marks}} out of {{object.total_marks}}</h3>
+{%endfor%}
+{%endblock%}

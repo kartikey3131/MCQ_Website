@@ -1,0 +1,11 @@
+{%extends "student.html" %}
+{%block title%}
+Home
+{%endblock%}
+{%block content%}
+{%for object in quiz%}
+<h3>{{object}}</h3>
+<a href="{% url 'takequiz' object.pk 1 %}">Attempt Quiz</a>
+<a href="{%url 'see_standings' object.pk %}">Standings</a>
+{%endfor%}
+{%endblock%}

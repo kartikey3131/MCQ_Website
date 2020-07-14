@@ -1,0 +1,10 @@
+
+{%extends "student.html" %}
+{%block title%}
+Home
+{%endblock%}
+{%block content%}
+{%for object in marks%}
+<h3>{{object.user}}  {{object.marks}}/{{object.total_marks}}</h3>
+{%endfor%}
+{%endblock%}

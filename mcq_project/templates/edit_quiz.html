@@ -1,0 +1,16 @@
+{%extends "teacher.html"%}
+{%block title%}Well hello there{%endblock%}
+{%block content%}
+<div class="row">
+    <form action="" method="POST">
+ {{form.as_p}}
+ {{type_form.as_p}}
+ {% csrf_token %}
+ {%if i == total %}
+ <button type="submit" class="btn btn-success">Done</button>
+ {%else%}
+ <button type="submit" class="btn btn-primary">Next</button>
+ {%endif%}
+</form>
+</div>
+{%endblock%}

@@ -1,0 +1,30 @@
+{%extends "student.html"%}
+{%block title%}QUIZ{%endblock%}
+{%block content%}
+<div class="row">
+    <form action="" method="POST">
+        <h1>{{i}}/{{total}}</h1>
+ <h2>{{i}}. {{q.name}}</h2>
+ <input type="radio" name="choices" id="1" value="{{ q.choice1 }}">
+ <label for="1">{{q.choice1}}</label><br>
+
+ <input type="radio" name="choices" id="2" value="{{ q.choice2 }}">
+ <label for="2">{{q.choice2}}</label><br>
+
+ <input type="radio" name="choices" id="3" value="{{ q.choice3 }}">
+ <label for="3">{{q.choice3}}</label><br>
+
+ <input type="radio" name="choices" id="4" value="{{ q.choice4 }}">
+ <label for="4">{{q.choice4}}</label><br>
+
+ <h2>+{{q.correct_ans}}/{{q.incorrect_ans}}</h2>
+
+ {% csrf_token %}
+ {%if i == total %}
+ <button type="submit" class="btn btn-success">Done</button>
+ {%else%}
+ <button type="submit" class="btn btn-primary">Next</button>
+ {%endif%}
+</form>
+</div>
+{%endblock%}

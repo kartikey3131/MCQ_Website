@@ -1,0 +1,12 @@
+{%extends "layout.html"%}
+{%block title%}Well hello there{%endblock%}
+{%block content%}
+<div class="row">
+    <form action="" method="POST">
+ {{form.as_p}}
+ {{type_form.as_p}}
+ {% csrf_token %}
+ <input type="Submit" class="button">
+</form>
+</div>
+{%endblock%}
